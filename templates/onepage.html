@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <meta charset="utf-8" />
+        <title>Build-a-Blog</title>
+        <style type="text/css">
+            body {
+                font-family: sans-serif;
+                width: 800px;
+                margin: 0 auto;
+                padding: 10px;
+            }
+
+            .error {
+                color: red;
+            }
+
+            label {
+                display: block;
+                font-size: 20px;
+            }
+
+            input[type=text] {
+                width: 400px;
+                font-size: 20px;
+                padding: 2px;
+            }
+
+            textarea {
+                width: 400px;
+                height: 200px;
+                font-size: 17px;
+            }
+
+            input[type=submit] {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>blog!</h1>
+
+<p>{{error}}</p>
+<form method="post" action="/">
+<label>
+    title
+    <br>
+    <input type="text" name="title" value="{{ title }}"/>
+</label>
+<br>
+<label>
+    blog entry
+    <br>
+    <textarea name="entry">{{ entry }}</textarea>
+</label>
+<input type="submit" value="Submit Blog Entry" />
+</form>
+
+<hr>
+{% for blog in blogs %}
+    <h2><a href="/blog/{{blog.key().id()}}">{{ blog.title }}</a></h2>
+    <p>{{ blog.blogentry}}</p>
+{% endfor %}
+
+</body>
+</html>

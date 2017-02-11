@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block ourstuff %}
+<p class="error">{{ error }}</p>
+{% for blog in blogs %}
+    <h2><a href="/blog/{{blog.key().id()}}">{{ blog.title }}</a></h2>
+    <p>{{ blog.blogentry}}</p>
+{% endfor %}
+{% endblock %}

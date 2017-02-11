@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <meta charset="utf-8" />
+        <title>Build-a-Blog</title>
+        <style type="text/css">
+            body {
+                font-family: sans-serif;
+                width: 800px;
+                margin: 0 auto;
+                padding: 10px;
+            }
+
+            .error {
+                color: red;
+            }
+
+            label {
+                display: block;
+                font-size: 20px;
+            }
+
+            input[type=text] {
+                width: 400px;
+                font-size: 20px;
+                padding: 2px;
+            }
+
+            textarea {
+                width: 400px;
+                height: 200px;
+                font-size: 17px;
+            }
+
+            input[type=submit] {
+                font-size: 24px;
+            }
+
+            a {
+                text-decoration: none;
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><a href="/blog">blog!</a></h1>
+        {% block ourstuff %}
+        <p class="error">You should only
+            see this during testing and
+            if something goes very badly.
+        </p>
+        {% endblock %}
+    </body>
+</html>
